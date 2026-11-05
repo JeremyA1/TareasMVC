@@ -1,0 +1,46 @@
+﻿
+
+<section aria-labelledby="archivos-adjuntos-titulo">
+    <div class="section-heading flex-wrap">
+        <h6 id="archivos-adjuntos-titulo" class="mb-0">
+            <i class="bi bi-paperclip me-2" aria-hidden="true"></i>Archivos adjuntos
+        </h6>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="manejarClickAgregarArchivoAdjunto()">
+            <i class="bi bi-plus me-1" aria-hidden="true"></i>Agregar archivo
+        </button>
+    </div>
+    <input
+        type="file"
+        onchange="manejarSeleccionArchivoTarea(event)"
+        id="archivoATarea"
+        aria-label="Seleccionar archivos adjuntos"
+        multiple class="d-none" />
+
+    <div id="reordenable-adjuntos" class="task-list" data-bind="foreach: archivosAdjuntos">
+        <div class="task-step">
+            <button type="button" class="btn btn-link p-0 text-start text-decoration-none task-title"
+                    data-bind="text: titulo, hidden: modoEdicion, click: manejarClickTituloarchivoAdjunto">
+            </button>
+
+            <div data-bind="visible: modoEdicion, event: {focusout: manejarFocusoutTituloArchivoAdjunto}">
+                <input name="txtArchivoAdjuntoTitulo" type="text" class="form-control"
+                       aria-label="Título del archivo adjunto"
+                       data-bind="value: titulo, attr:{'data-id': id}" />
+            </div>
+
+            <p class="small text-body-secondary mt-1 mb-0">
+                Agregado <span data-bind="text: publicado"></span>
+            </p>
+            <div class="form-actions gap-2 mt-3">
+                <button type="button" class="btn btn-outline-danger btn-sm"
+                        data-bind="click: manejarClickBorrarARchivoAdjunto">
+                    <i class="bi bi-trash me-1" aria-hidden="true"></i>Borrar
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm"
+                        data-bind="click: manejarClickDescargarArchivoAdjunto">
+                    <i class="bi bi-download me-1" aria-hidden="true"></i>Descargar
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

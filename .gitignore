@@ -1,0 +1,38 @@
+# Dependencias y datos del almacenamiento local
+node_modules/
+.azurite/
+.cache/
+.nuget/
+.tools/
+
+# Archivos generados por .NET y Visual Studio
+**/bin/
+**/obj/
+.vs/
+.build-diagnosis/
+.build-verification/
+*.user
+*.suo
+*.tmp
+*.log
+
+# Archivos subidos por los usuarios y bases de datos locales
+TareasMVC/wwwroot/archivosadjuntos/
+*.mdf
+*.ldf
+*.db
+*.db-shm
+*.db-wal
+
+# Credenciales y configuraciones privadas
+.env
+.env.*
+!.env.example
+**/appsettings.Local.json
+**/appsettings.*.Local.json
+**/secrets.json
+*.pfx
+*.p12
+*.pem
+*.key
+**/Properties/PublishProfiles/

@@ -1,0 +1,9 @@
+{
+  "name": "tareasmvc-desarrollo-local",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Herramientas de desarrollo local de TareasMVC",
+  "scripts": {
+    "azurite": ".tools\\azurite\\azurite.exe --location .azurite --disableTelemetry"
+  }
+}
